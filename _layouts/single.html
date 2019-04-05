@@ -48,6 +48,12 @@ layout: default
         {% elsif page.citation %}
           <p>Recommended citation: {{ page.citation }} </p>
         {% endif %}
+                 
+        {% if page.doi %}
+          <p><div data-badge-popover="top" data-badge-type="donut" data-doi="{{ page.doi }}" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed"></div></p>
+        {% elsif page.arxiv %}
+          <p><div data-badge-popover="top" data-badge-type="donut" data-arxiv-id="{{ page.arxiv }}" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed"></div></p>"
+        {% endif %}
     
         </header>
       {% endunless %}
