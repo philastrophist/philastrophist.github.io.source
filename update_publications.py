@@ -16,7 +16,7 @@ doi: {p.doi[0]}
 ---
 {p.abstract}
 
-[{p.pub}](https://dx/doi.org/{p.doi[0]})
+[{p.pub}](https://dx.doi.org/{p.doi[0]})
 
 [arXiv](https://arxiv.org/abs/{arxiv})
 """
