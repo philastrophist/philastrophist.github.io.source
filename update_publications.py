@@ -50,10 +50,10 @@ if __name__ == '__main__':
                              fl=['title', 'pubdate', 'pub', 'abstract', 'bibtex', 'identifier', 'bibcode', 'doi'])
 
     for paper in papers:
-        print(paper.title[0])
         title = clean_title(paper)
         arxiv = arxiv_id(paper)
-        page = template.format(p=paper, arxiv=arxiv, title=title, date=clean_date(paper))
+        date = clean_date(paper)
+        page = template.format(p=paper, arxiv=arxiv, title=title, date=date)
         fname = '_publications/{}.md'.format(title)
         if (args.overwrite) or (not os.path.exists(fname)):
             with open(fname, 'w') as f:
