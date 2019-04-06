@@ -14,6 +14,8 @@ venue: '{p.pub}'
 arxiv: {arxiv}
 doi: {p.doi[0]}
 ---
+{authors}
+
 {p.abstract}
 
 [{p.pub}](https://dx.doi.org/{p.doi[0]})
@@ -40,6 +42,10 @@ def clean_title(paper):
 def clean_date(paper):
     return paper.pubdate.replace('00', '01')
 
+def clean_authors(paper):
+    return '; '.join(['**{}**'.format(i) if 'Read, S' in i else i for i in paper.author])
+
+
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
@@ -47,13 +53,16 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     papers = ads.SearchQuery(author='Read, S.C.', sort="year", aff="*Hertfordshire*", database='astronomy', 
-                             fl=['title', 'pubdate', 'pub', 'abstract', 'bibtex', 'identifier', 'bibcode', 'doi'])
+                             fl=['title', 'pubdate', 'pub', 'abstract', 'bibtex', 'identifier', 'bibcode', 'doi',
+                             'author'])
 
     for paper in papers:
         title = clean_title(paper)
         arxiv = arxiv_id(paper)
         date = clean_date(paper)
-        page = template.format(p=paper, arxiv=arxiv, title=title, date=date)
+        authors = clean_authors(paper)
+
+        page = template.format(p=paper, arxiv=arxiv, title=title, date=date, authors=authors)
         fname = '_publications/{}.md'.format(title)
         if (args.overwrite) or (not os.path.exists(fname)):
             with open(fname, 'w') as f:
