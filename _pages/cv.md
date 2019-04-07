@@ -24,7 +24,7 @@ Skills
 ======
 * Programming
   - Advanced: Python, LATEX, Matlab, shell
-  - Proficient: IDL, ruby, C, SQL, html, 
+  - Proficient: IDL, ruby, C, SQL, html
 * Tools
   - Linux, Git, Mercurial, DS9, SExtractor, MS Office
 
@@ -43,4 +43,4 @@ Talks
 Teaching
 ======
   * Programming Teaching Assistant/Tutor: November 2016 - present
-  
+  * 
