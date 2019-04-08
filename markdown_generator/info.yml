@@ -27,14 +27,35 @@ papers:
 
 
   published:
-    - name: "Read, S.C."
-      aff: "*Hertfordshire*"
-      year: 2015-2019
+    ADS:
+      - name: "Read, S.C."
+        aff: "*Hertfordshire*"
+        year: 2015-2019
 
-    - others: ['2016arXiv161003159M']
+    arxiv: ['2016arXiv161003159M']
+    doi: []
 
 cv:
   summary: ""
+  programming: 
+    advanced: ['Python']
+    intermediate: ['Shell', 'SQL', 'Matlab', ['LaTeX', '\large \LaTeX']]
+    basic: ['C', 'C++', 'R', 'Ruby', 'IDL', 'HTML']
+
+  education:
+    - qualification: Ph.D, Astronomy
+      location: University of Hertfordshire, UK
+      start: 2015
+      end: Present
+      notes: "Expected completion: 2019"
+    - qualification: MPhys, Physics
+      location: Durham University, UK
+      start: 2010
+      end: 2014
+      notes: 2:1 with Honours
+  
+  affiliations: [['Fellow of the Royal Astronomical Society', 'FRAS']]
+
   experience:
     - name: phd student
       start: Oct 2015
