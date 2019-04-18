@@ -36,6 +36,16 @@ papers:
     doi: []
 
 cv:
+  info:
+    name: Shaun C Read
+    github: philastrophist
+    phone: ""
+    site: shauncread.com
+    mail: shaun.c.read@gmail.com
+
+  skills_bubble: ["Astronomy", "Bayesian statistics", "Big data", "Observational", "Numerical techniques"]
+
+
   summary: ""
   programming: 
     advanced: ['Python']
@@ -57,14 +67,91 @@ cv:
   affiliations: [['Fellow of the Royal Astronomical Society', 'FRAS']]
 
   experience:
-    - name: phd student
+    - name: Ph.D. student
       start: Oct 2015
       end: Present
-      title: "Thesis: ..." 
+      info: ["**Supervisor**: Dr Dan J.B. Smith", 
+            "**Thesis**: Measuring the Physical Properties of Distant Galaxies and Black Holes in the Era of Surveys"]
       location: University of Hertfordshire
       bullets: [
-        'a', 
-        'b'
+        'Studying the relation between the star-formation rate and radio luminosity of galaxies.', 
+        'Using new photometric time-series techniques to estimate quasar black-hole masses using reverberation mapping.',
+        'Innovating new Bayesian methods to infer complete distributions from incomplete, noisy data in order to mitigate observational bias and explore large datasets.'
     ]
+    - name: Observing
+      start: Jun 2016
+      end: ""
+      location: William Herschel Telescope, La Palma
+      info: ""
+      bullets: [
+        "Observed 4 nights with WHT",
+      ]
+    - name: Programming teaching assistant & tutor
+      start: Jan 2016
+      end: Present
+      location: University of Hertfordshire, UK
+      bullets: [
+          "Taught students Python and Matlab for scientific programming courses.",
+          "Assisted students with programming exercises.",
+          "Lead programming lectures and demonstrations."
+      ]
+    - name: "'Physics of stars' demonstrator"
+      start: Nov 2016
+      end: Mar 2017
+      location: University of Hertfordshire, UK
+      bullets: [
+          "Assisted students at the Bayfordbury teaching observatory.",
+          "Instructed in the use of 16-inch telescopes and the reduction of data.",
+          "Projects included PNe imaging and constructing open cluster HR-diagrams."
+      ]
+    - name: "Insight Analyst"
+      start: Jul 2014
+      end: Jul 2015
+      location: Linkdex, UK
+      info: "**Summary**: Processing big data from raw consumer search patterns to an explanative format suitable for client business strategies."
+      bullets: [
+        "Big data processing with Python & sci-kit learn"
+        "Communication with the backend team "
+        "API design, visualisation, and automation development."
+      ]
+    - name: "Summer Student"
+      start: Jun 2013
+      end: Aug 2013
+      location: National Physical Laboratory, UK
+      info: "**Supervisor**: Dr Alastair Sinclair"
+      bullets: [
+          "Worked with the Time & Frequency Team."
+          "Analysed Gaussian beam quality for the strontium ion optical clock group."
+          "Developed analytical Matlab code and the optical bench setup required."
+      ]
+  interests:
+    """
+    * **Star-formation**: *LOFAR*, FIR, empirical relations, FIRC, MagPhys, SFG-AGN interface.
+    * **Reverberation mapping**: High redshift, photometric techniques, $$t_{lag}-L_{5100}$$, selection biases.
+    * **Big data & Bayesian analysis**: Large surveys, advanced Bayesian statistical inference, bias mitigation.
+    """
 
-    - name: observing
+  presentations:
+    - date: April 2018
+      meeting: European Week of Astronomy and Space Science
+      organiser: European Astronomical Society, *EAS*
+      location: University of Liverpool, UK
+      what: poster
+
+    - date: July 2017
+      meeting: National Astronomy Meeting
+      organiser: Royal Astronomical Society, *RAS*
+      location: University of Hull, UK
+      what: contributed talk
+
+    - date: June 2016
+      meeting: National Astronomy Meeting
+      organiser: Royal Astronomical Society, *RAS*
+      location: University of Nottingham, UK
+      what: contributed talk, poster
+
+    - date: May 2016
+      meeting: The Cosmic FIR Landscape with H-Atlas
+      organiser: H-ATLAS consortium
+      location: University of Lisbon, Portugal
+      what: contributed talk
