@@ -22,7 +22,7 @@ papers:
 
     - title: Brown dwarfs with Gaia
       pub: in prep.
-      authors: ['Gonzalez, E.', 'Pinfield, D.', 'Read, S.C.']
+      authors: ['Gonzalez, E.', 'Pinfield, D.', 'Read, S.C.', 'et al.']
       year: 2019
 
 
@@ -31,9 +31,8 @@ papers:
       - name: "Read, S.C."
         aff: "*Hertfordshire*"
         year: 2015-2019
-
-    arxiv: ['2016arXiv161003159M']
-    doi: []
+    others:
+      - arxiv: 2016arXiv161003159M
 
 cv:
   info:
