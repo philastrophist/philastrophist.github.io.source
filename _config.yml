@@ -10,7 +10,7 @@ locale                   : "en-GB"
 title                    : "Shaun C Read"
 title_separator          : "-"
 name                     : &name "Shaun C Read"
-description              : &description "PhD student at the  of Hertfordshire"
+description              : &description "PhD student at the University of Hertfordshire"
 url                      : http://shaun.science # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "philastrophist/philastrophist.github.io"
@@ -83,7 +83,7 @@ author:
   name             : "Shaun C Read"
   avatar           : "profile.jpg"
   bio              : "PhD Student"
-  location         : "Hertfordshire University, UK"
+  location         : "University of Hertfordshire, UK"
   employer         :
   pubmed           : 
   googlescholar    : 
