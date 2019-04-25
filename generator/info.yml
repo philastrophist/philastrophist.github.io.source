@@ -70,8 +70,8 @@ experience:
   - name: Ph.D. student
     start: Oct 2015
     end: Present
-    info: "**Supervisor**: Dr Dan J.B. Smith"
-    output: "**Thesis**: Measuring the Physical Properties of Distant Galaxies and Black Holes in the Era of Surveys"
+    info: "Supervisor: Dr Daniel J.B. Smith"
+    output: "Thesis: Measuring the Physical Properties of Distant Galaxies and Black Holes in the Era of Surveys"
     location: University of Hertfordshire
     bullets: [
       '* Studying the relation between the star-formation rate and radio luminosity of galaxies.', 
@@ -112,7 +112,7 @@ experience:
     end: Jul 2015
     output: ""
     location: Linkdex, UK
-    info: "**Summary**: Processing big data from raw consumer search patterns to an explanative format suitable for client business strategies."
+    info: "Processing big data from raw consumer search patterns to an explanative format suitable for client business strategies."
     bullets: [
       "* Big data processing with Python & sci-kit learn",
       "* Communication with the backend team ",
@@ -150,7 +150,7 @@ presentations:
     what: contributed talk, poster
 
   - date: May 2016
-    meeting: The Cosmic FIR Landscape with H-Atlas
+    meeting: The Cosmic FIR Landscape with H-ATLAS
     organiser: H-ATLAS consortium
     location: University of Lisbon, Portugal
     what: contributed talk

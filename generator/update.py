@@ -92,6 +92,11 @@ def clean_authors(paper, start='**', end='**'):
 
 
 if __name__ == '__main__':
+    from argparse import ArgumentParser
+    parser = ArgumentParser()
+    parser.add_argument('--overwrite', action='store_true')
+    args = parser.parse_args()
+
     here = os.path.dirname(os.path.abspath(__file__))
 
     with open(os.path.join(here, 'cv-shauncread.template.tex'), 'r') as f:
@@ -107,8 +112,8 @@ if __name__ == '__main__':
         from yaml import CLoader as Loader
         info = yaml.load(f, Loader=Loader)
     
-
-    fields = ['title', 'pubdate', 'pub', 'abstract', 'bibtex', 'identifier', 'bibcode', 'doi', 'author', 'year']
+    print('finding papers...')
+    fields = ['title', 'pubdate', 'pub', 'abstract', 'identifier', 'bibcode', 'doi', 'author', 'year']
     published = []
     for entry in info['published']['ADS']:
         for paper in ads.SearchQuery(author='Read, S.C.', sort="year", aff="*Hertfordshire*", 
@@ -119,24 +124,28 @@ if __name__ == '__main__':
             d['date'] = clean_date(paper)
             d['arxiv'] = arxiv_id(paper)
             published.append(d)
+    print(len(published), 'published papers found on ADS')
     info['published'] = published
 
-    # new_latex_cv = parse(latex_cv_template, info, 'latex')
-    # new_markdown_cv = parse(markdown_cv_template, info, 'md')
+    print('parsing cv...')
+    new_latex_cv = parse(latex_cv_template, info, 'latex')
+    new_markdown_cv = parse(markdown_cv_template, info, 'md')
 
-    # with open('latex/cv-shauncread.tex', 'w') as f:
-    #     f.write(new_latex_cv)
+    print('updating cv...')
+    with open('latex/cv-shauncread.tex', 'w') as f:
+        f.write(new_latex_cv)
 
-    #     with open('_pages/cv.md', 'w') as f:
-    #     f.write(new_markdown_cv)
+    with open('_pages/cv.md', 'w') as f:
+        f.write(new_markdown_cv)
 
-
-
+    print('updating publication list... ')
     for paper in published:
-        page = parse(markdown_paper_page_template, paper, 'md')
-        print(page)
-        # fname = '_publications/{}.md'.format(paper['filename'])
-        # if (not os.path.exists(fname)) or args.overwrite:
-        #     with open(fname, 'w') as f:
-        #         f.write(page)
+        fname = '_publications/{}.md'.format(paper['filename'])
+        if (not os.path.exists(fname)) or args.overwrite:
+            print('writing new paper:  {}'.format(paper['title']))
+            page = parse(markdown_paper_page_template, paper, 'md')
+            with open(fname, 'w') as f:
+                f.write(page)
+        else:
+            print('not overwriting existing paper: {}'.format(paper['title']))
 

@@ -14,6 +14,9 @@
 \usepackage{pstricks}
 
 \usepackage{fontawesome}
+\defaultfontfeatures{
+    Path = fonts/ }
+\newfontfamily\fatest{FontAwesome}
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}
