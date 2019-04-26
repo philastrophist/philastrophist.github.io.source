@@ -11,14 +11,15 @@ redirect_from:
 
 I am a final year Ph.D. student at the University of Hertfordshire. 
 My interests lie in mainly in applying Bayesian analysis to big data. 
-Therefore, during my Ph.D. I have got involved with the latest data from LOFAR, Herschel-ATLAS, and SDSS.
+Therefore, during my Ph.D. I have got involved with the latest data from [LOFAR](http://www.lofar.org/), [Herschel-ATLAS](https://www.h-atlas.org/), and [SDSS](https://www.sdss.org/).
 
 My research attempts to quantify and then disentangle scatter and selection effects from well-known scaling relations. 
-My most recent work includes charaterising how the the relationship between the far-infrared and low frequency radio emission (FIRC) from star-forming galaxies changes over the properties of those galaxies <sup>[paper](publication/2018-11-00-The-Far-Infrared-Radio-Correlation-at-low-radio-frequency-with-LOFAR-H-ATLAS)</sup> and methods for highly efficient reverberation mapping using photometry.
+My most recent work includes charaterising how the the relationship between the far-infrared and low frequency radio emission (FIRC) from star-forming galaxies changes over the properties of those galaxies ([paper](publication/2018-11-00-The-Far-Infrared-Radio-Correlation-at-low-radio-frequency-with-LOFAR-H-ATLAS)).  
+I have also branched out to develop photometric reverberation mapping techniques for use with large photometric surveys such as LSST. 
 
-Currently, I'm developing a Gaussian mixutre model technique [CANDID](https://github.com/philastrophist/candid) that can mitigate astronomical biases and incomplete datasets whilst also modelling an entire multidimensional distribution. *Sounds good, right?!*
+Currently, I'm developing a Gaussian mixutre model technique [CANDID](https://github.com/philastrophist/candid) that can mitigate the effects of astronomical biases and incomplete datasets whilst also modelling an entire multidimensional distribution. *Sounds good, right?!*  
 I am applying this technique to explore the causes of the mass dependency of the star-formation rate -- radio luminosity relation (see Gulay's [paper](https://academic.oup.com/mnras/article/475/3/3010/4795315)).
-I am using the latest LOFAR data release (DR2) together with [Horizon-AGN simulation](https://www.horizon-simulation.org/) to model the full distribution of star-formating properties over redshift and associate it with supernovae energy output.
+To do this, I am using the latest LOFAR data release (DR2) together with [Horizon-AGN simulation](https://www.horizon-simulation.org/) to model the full distribution of star-formating properties over redshift and associate it with supernovae energy output.
 Watch this space!
 
 # Star-formation relations
