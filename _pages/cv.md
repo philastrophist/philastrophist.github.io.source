@@ -107,6 +107,11 @@ Expected completion: 2019
 * *Highly Efficient Photometric Reverberation Mapping at High Redshift*, Read, S.C. Smith, D. J. B. Jarvis, M. J. Gürkan, G. - submitted to MNRAS
 * *On the Causes of the Mass Dependency of the Star-formation Rate -- Radio
 Luminosity Relation with LOFAR, Horizon-AGN, and CANDID*, Read, S.C. Smith, D. J. B. Gürkan, G. Hardcastle, M. J. et al. - in prep.
+* *A LOFAR-IRAS cross-match study: the far-infrared radio correlation and
+the 150 MHz luminosity as a star-formation rate tracer*, Wang, L. Rowan-Robinson, M. Gao, F. Bonato, M. Calistro-Rivera, G.
+Chyży, K.T. Duncan, K.J. Farrah, D. Gurkan, G. Hardcastle, M.J.
+McCheyne, I. Prandoni, I. Read, S.C. Röttgering, H.J.A. Sabater, J.
+Shimwell, T. W. Smith, D.J.B. Williams, W.L. - in prep.
 * *Bias and Accretion Rate Dependency in the Reverberation-Mapped
 Lag-luminosity Relation*, Read, S.C. Smith, D. J. B. et al. - in prep.
 * *Galaxy Morphological Classification in Deep-Wide Surveys via

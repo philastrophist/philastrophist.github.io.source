@@ -11,12 +11,10 @@
 
 \def\arrow#1{\pspicture[shift=2pt](#1,0)\psline{->}(#1,0)\endpspicture}
 
-\usepackage{pstricks}
+% \usepackage{pstricks}
 
 \usepackage{fontawesome}
-\defaultfontfeatures{
-    Path = fonts/ }
-\newfontfamily\fatest{FontAwesome}
+\newfontfamily\fatest[Path = fonts/]{FontAwesome.otf}
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}
