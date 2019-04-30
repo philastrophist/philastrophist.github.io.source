@@ -1,7 +1,8 @@
 #!/bin/bash -x
 set -e
 
-sudo apt-get install pandoc
+wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb
+sudo dpkg -i pandoc-2.7.2-1-amd64.deb
 pip3 install pypandoc
 python3 generator/update.py
 
