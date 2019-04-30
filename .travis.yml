@@ -1,5 +1,7 @@
 sudo: true
-language: generic
+language: python
+python:
+  - "3.6"
 matrix:
   include:
     - os: linux
