@@ -4,8 +4,5 @@ matrix:
   include:
     - os: linux
       env: AUTO_UPDATE=1
-script: |
-  if $AUTO_UPDATE
-  then
-    source update.sh
-  fi
+script: 
+  - ./update.sh

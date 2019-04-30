@@ -7,7 +7,7 @@ python generator/update.py
 sudo apt-get install texlive-xetex
 tlmgr init-usertree
 sudo tlmgr update --all
-install fontawesome
+tlmgr install fontawesome
 
 # Install tectonic using conda
 # wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
@@ -25,7 +25,7 @@ install fontawesome
 cd latex
 # tectonic cv-shauncread.tex --print
 cp cv-shauncread.pdf cv-shauncread.pdf.bkp
-xelatex  -interaction nonstopmode cv-shauncread.tex
+xelatex -interaction nonstopmode cv-shauncread.tex
 
 # Force push the paper to GitHub
 cd $TRAVIS_BUILD_DIR
