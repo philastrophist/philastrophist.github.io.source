@@ -5,4 +5,5 @@ matrix:
     - os: linux
       env: AUTO_UPDATE=1
 script: 
+  - chmod +x update.sh
   - ./update.sh
