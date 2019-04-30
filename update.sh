@@ -1,10 +1,11 @@
 #!/bin/bash -x
+set -e
 
 python generator/update.py
 
 # if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf"
 # then
-sudo apt-get install texlive-xetex
+sudo apt-get install texlive-base texlive-latex-base texlive-binaries tipa tex-common lmodern texlive-xetex
 tlmgr init-usertree
 sudo tlmgr update --all
 tlmgr install fontawesome
