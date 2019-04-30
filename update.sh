@@ -10,11 +10,11 @@ python3 generator/update.py
 curl -sL http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar zxf - && mv install-tl-20* install-tl
 cd install-tl
 echo "selected_scheme scheme-full" > profile \
-  && ./install-tl -repository http://mirror.ctan.org/systems/texlive/tlnet -profile profile
+  && sudo ./install-tl -repository http://mirror.ctan.org/systems/texlive/tlnet -profile profile
 export PATH=/usr/local/texlive/2017/bin/x86_64-linux:$PATH
-tlmgr init-usertree
-tlmgr update --all
-tlmgr install fontawesome
+sudo tlmgr init-usertree
+sudo tlmgr update --all
+sudo tlmgr install fontawesome
 
 # Install tectonic using conda
 # wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
