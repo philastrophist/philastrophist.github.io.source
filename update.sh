@@ -3,12 +3,11 @@ set -e
 
 wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb
 sudo dpkg -i pandoc-2.7.2-1-amd64.deb
-pip3 install pypandoc
+pip3 install pypandoc yaml requests ads
 python3 generator/update.py
 
 # if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf"
 # then
-pip install 
 sudo apt-get install texlive-base texlive-latex-base texlive-binaries tipa tex-common lmodern texlive-xetex
 tlmgr init-usertree
 sudo tlmgr update --all

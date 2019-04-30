@@ -1,11 +1,14 @@
 sudo: true
 language: python
 python:
-  - "3.6"
+- '3.6'
 matrix:
   include:
-    - os: linux
-      env: AUTO_UPDATE=1
-script: 
-  - chmod +x update.sh
-  - ./update.sh
+  - os: linux
+    env: AUTO_UPDATE=1
+env:
+  global:
+    secure: CuF7gv7SUvULzdQDSa7jiDNttsLTfOSJmC+qqTShHhvimu6a9ornvZCGHU1qQOHVlO39a3Ch9+K0EbvZFPG0cqHsW4uhdTa1VHU7l+FOTi2zDZ3D1xdoqLkv4N7Xw/IUXHdGRrUQT+AxSryNwLmSEdcdWFuZlbLidfadkXTdg1acz2Ssofa/1syatv7U6NM6u3GtD/XMFuhiWNZHwJ/KxYe6ippEGGLBhP31WFWfkRI1rmmEdY+oD9NGrVdZVZq8hxi4PRXV4i90oxcQUe7Os9AX/udHp4N0nVODVPx9DUd4nEAqV73fbsnLl+/qVgQRkjYO3Ihwj7Elhdd6D7P8MkPSbm/ApoPud9vvy+10LXB0zWwaNATifv1Q2fRep3iebJnPC5CrSfu+dx0mNJUpzdLtgPM9F049KXUhvcvV50fy1NfFVHpy4yQneT2HGB4gTKsU02wsl/OwdvFO8/SKT4Xsh+/QOmJ6LZNJh4xGgtrisYGrZVhYT1+keaooQ5JPwcMv/NiYjnf0QhLIvlNmsPfDdlE2oXcOlQ6/Ky9lF44IPdXRRirCGXBg6J3KsOt6i8St+w3KfByRPURF+ML92fDrC9u7SaxhUaaRUKEi9yKuvOmzkZmHjzbnZSlklK14JyNqpJ8zbJpXrv+BDK0x+5PlS7YYOUmY2WvzvdKCONQ=
+script:
+- chmod +x update.sh
+- "./update.sh"
