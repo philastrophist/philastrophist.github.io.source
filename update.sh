@@ -3,7 +3,7 @@ set -e
 
 wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb
 sudo dpkg -i pandoc-2.7.2-1-amd64.deb
-pip3 install pypandoc yaml requests ads
+pip3 install pypandoc pyyaml requests ads
 python3 generator/update.py
 
 # if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf"
@@ -36,6 +36,6 @@ cd $TRAVIS_BUILD_DIR
 git checkout --orphan $TRAVIS_BRANCH-pdf
 git rm -rf .
 git add -f latex/cv-shauncread.pdf
-git -c user.name='travis' -c user.email='travis' commit -m "building the paper"
+git -c user.name='travis' -c user.email='travis' commit -m "building latex"
 git push -q -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG $TRAVIS_BRANCH-pdf
 # fi
