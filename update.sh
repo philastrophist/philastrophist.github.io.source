@@ -6,11 +6,14 @@ sudo dpkg -i pandoc-2.7.2-1-amd64.deb
 pip3 install pypandoc pyyaml requests ads
 python3 generator/update.py
 
-# if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf"
-# then
-sudo apt-get install texlive-base texlive-latex-base texlive-xetex
+# if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf
+curl -sL http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar zxf - && mv install-tl-20* install-tl
+cd install-tl
+echo "selected_scheme scheme-full" > profile \
+  && ./install-tl -repository http://mirror.ctan.org/systems/texlive/tlnet -profile profile
+export PATH=/usr/local/texlive/2017/bin/x86_64-linux:$PATH
 tlmgr init-usertree
-sudo tlmgr update --all
+tlmgr update --all
 tlmgr install fontawesome
 
 # Install tectonic using conda
