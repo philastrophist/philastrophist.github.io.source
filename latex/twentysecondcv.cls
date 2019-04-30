@@ -14,7 +14,7 @@
 % \usepackage{pstricks}
 
 \usepackage{fontawesome}
-\newfontfamily\fatest[Path = fonts/]{FontAwesome.otf}
+% \newfontfamily\fatest{fonts/FontAwesome.otf}
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}

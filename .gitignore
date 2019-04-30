@@ -2,3 +2,7 @@ _site/
 
 Gemfile.lock
 *.sublime-*
+
+*.aux
+*.log
+*.out
