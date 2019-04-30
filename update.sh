@@ -1,10 +1,13 @@
 #!/bin/bash -x
 set -e
 
-python generator/update.py
+sudo apt-get install pandoc
+pip3 install pypandoc
+python3 generator/update.py
 
 # if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf"
 # then
+pip install 
 sudo apt-get install texlive-base texlive-latex-base texlive-binaries tipa tex-common lmodern texlive-xetex
 tlmgr init-usertree
 sudo tlmgr update --all
