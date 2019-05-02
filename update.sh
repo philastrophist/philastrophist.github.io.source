@@ -1,7 +1,7 @@
 #!/bin/bash -x
 set -e
 
-TEST_BRANCH="master"
+TEST_BRANCH="autocompile"
 LIVE_BRANCH="live"
 
 
