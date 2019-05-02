@@ -1,11 +1,11 @@
 #!/bin/bash -x
 set -e
 
-TEST_BRANCH="autocompile"
-LIVE_BRANCH="live"
+UPDATE_BRANCH="autocompile"
+LIVE_BRANCH="test"
 
 
-if [[ $TRAVIS_BRANCH  == $TEST_BRANCH ]]; then
+if [[ $TRAVIS_BRANCH  == $UPDATE_BRANCH ]]; then
 
 	wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb
 	sudo dpkg -i pandoc-2.7.2-1-amd64.deb
@@ -24,10 +24,9 @@ if [[ $TRAVIS_BRANCH  == $TEST_BRANCH ]]; then
 
 	# Force push to GitHub
 	cd $TRAVIS_BUILD_DIR
-	git checkout --orphan $LIVE_BRANCH
-	git rm -rf .
-	git add -f latex/cv-shauncread.pdf
-	git -c user.name='travis' -c user.email='travis' commit -m "building latex"
+	git checkout $LIVE_BRANCH
+  git add --all
+	git -c user.name='travis' -c user.email='travis' commit -m "updating live version"
 	git push -q -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG $LIVE_BRANCH
 
 fi
