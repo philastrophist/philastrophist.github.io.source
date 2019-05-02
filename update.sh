@@ -24,7 +24,7 @@ if [[ $TRAVIS_BRANCH  == $UPDATE_BRANCH ]]; then
 
 	# Force push to GitHub
 	cd $TRAVIS_BUILD_DIR
-	git checkout $LIVE_BRANCH
+	git checkout $LIVE_BRANCH || git checkout -b $LIVE_BRANCH
   git add --all
 	git -c user.name='travis' -c user.email='travis' commit -m "updating live version"
 	git push -q -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG $LIVE_BRANCH
