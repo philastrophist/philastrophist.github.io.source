@@ -13,9 +13,9 @@ if [[ $TRAVIS_BRANCH  == $UPDATE_BRANCH ]]; then
 	python3 generator/update.py
 
 	# if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf"; then  # if pdf needs generating
-	sudo tlmgr init-usertree
-	sudo tlmgr update --all
-	sudo tlmgr install fontawesome
+	# sudo tlmgr init-usertree
+	# sudo tlmgr update --all
+	# sudo tlmgr install fontawesome
 	cd latex
 	cp cv-shauncread.pdf cv-shauncread.pdf.bkp
 	./latexdockercmd.sh xelatex -interaction nonstopmode cv-shauncread.tex
