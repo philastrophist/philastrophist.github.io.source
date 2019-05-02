@@ -12,21 +12,21 @@ if [[ $TRAVIS_BRANCH  == $UPDATE_BRANCH ]]; then
 	pip3 install pypandoc pyyaml requests ads
 	python3 generator/update.py
 
-	if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf"; then  # if pdf needs generating
-		sudo tlmgr init-usertree
-		sudo tlmgr update --all
-		sudo tlmgr install fontawesome
-		cd latex
-		cp cv-shauncread.pdf cv-shauncread.pdf.bkp
-		./latexdockercmd.sh xelatex -interaction nonstopmode cv-shauncread.tex
+	# if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'latex/' | grep -v "*.pdf"; then  # if pdf needs generating
+	sudo tlmgr init-usertree
+	sudo tlmgr update --all
+	sudo tlmgr install fontawesome
+	cd latex
+	cp cv-shauncread.pdf cv-shauncread.pdf.bkp
+	./latexdockercmd.sh xelatex -interaction nonstopmode cv-shauncread.tex
 
-	fi
+	# fi
 
 	# Force push to GitHub
 	cd $TRAVIS_BUILD_DIR
 	git checkout $LIVE_BRANCH || git checkout -b $LIVE_BRANCH
-  git add --all
+  git add _publications/ latex/ files/
 	git -c user.name='travis' -c user.email='travis' commit -m "updating live version"
-	git push -q -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG $LIVE_BRANCH
+	git push https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG $LIVE_BRANCH
 
 fi
