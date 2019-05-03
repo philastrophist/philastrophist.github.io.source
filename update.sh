@@ -18,14 +18,14 @@ if [[ $TRAVIS_BRANCH  == $UPDATE_BRANCH ]]; then
 	# sudo tlmgr install fontawesome
 	cd latex
 	cp cv-shauncread.pdf cv-shauncread.pdf.bkp
-	./latexdockercmd.sh xelatex -interaction nonstopmode cv-shauncread.tex
+	../latexdockercmd.sh xelatex -interaction nonstopmode cv-shauncread.tex
 
 	# fi
 
 	# Force push to GitHub
-	cd $TRAVIS_BUILD_DIR
+	cd ..
 	git checkout $LIVE_BRANCH || git checkout -b $LIVE_BRANCH
-  git add _publications/ latex/ files/
+  	git add _publications/ latex/ files/
 	git -c user.name='travis' -c user.email='travis' commit -m "updating live version"
 	git push https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG $LIVE_BRANCH
 
