@@ -7,6 +7,7 @@ UPDATE_BRANCH="develop"
 LIVE_BRANCH="master"
 
 git checkout $TRAVIS_BRANCH
+git flow init -d
 git status
 
 git config gitflow.branch.develop $UPDATE_BRANCH
