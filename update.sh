@@ -6,6 +6,7 @@ set -e
 UPDATE_BRANCH="test-develop"
 LIVE_BRANCH="test-master"
 
+git status
 git flow init -d
 git config gitflow.branch.develop $UPDATE_BRANCH
 git config gitflow.branch.master $LIVE_BRANCH
