@@ -6,6 +6,7 @@ set -e
 UPDATE_BRANCH="test-develop"
 LIVE_BRANCH="test-master"
 
+git checkout $TRAVIS_BRANCH
 git status
 
 git config gitflow.branch.develop $UPDATE_BRANCH
