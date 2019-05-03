@@ -8,6 +8,7 @@ LIVE_BRANCH="master"
 
 git checkout $TRAVIS_BRANCH
 
+git flow init -d
 git config gitflow.branch.develop "$UPDATE_BRANCH"
 git config gitflow.branch.master "$LIVE_BRANCH"
 git config gitflow.prefix.hotfix cron
