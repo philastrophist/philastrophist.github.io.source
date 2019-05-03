@@ -3,8 +3,8 @@
 # set a cron job to run on LIVE_BRANCH
 set -e
 
-UPDATE_BRANCH="test-develop"
-LIVE_BRANCH="test-master"
+UPDATE_BRANCH="develop"
+LIVE_BRANCH="master"
 
 git checkout $TRAVIS_BRANCH
 git status
@@ -52,7 +52,7 @@ if [[ ($TYPE == 'CRON') || ( $TYPE == 'USER' ) ]]; then
   fi
 
 
-  git push https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $UPDATE_BRANCH
-  git push https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $LIVE_BRANCH
+  git push --dry-run https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $UPDATE_BRANCH
+  git push --dry-run https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $LIVE_BRANCH
 fi
   
