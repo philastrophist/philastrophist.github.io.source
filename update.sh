@@ -7,10 +7,13 @@ UPDATE_BRANCH="test-develop"
 LIVE_BRANCH="test-master"
 
 git status
-git flow init -d
+
 git config gitflow.branch.develop $UPDATE_BRANCH
 git config gitflow.branch.master $LIVE_BRANCH
 git config gitflow.prefix.hotfix cron
+git config gitflow.prefix.feature feature
+git config gitflow.prefix.release release
+
 
 TYPE='INVALID'
 if [[ $TRAVIS_EVENT_TYPE == 'cron' && $TRAVIS_BRANCH == "$LIVE_BRANCH" ]]; then
