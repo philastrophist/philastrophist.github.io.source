@@ -7,17 +7,7 @@ UPDATE_BRANCH="develop"
 LIVE_BRANCH="master"
 
 git checkout $TRAVIS_BRANCH
-
-git flow init -d
-git config gitflow.branch.develop "$UPDATE_BRANCH"
-git config gitflow.branch.master "$LIVE_BRANCH"
-git config gitflow.prefix.hotfix cron
-git config gitflow.prefix.feature feature
-git config gitflow.prefix.release release
-git config gitflow.prefix.support support
-git config gitflow.prefix.versiontag ''
-
-git status
+git pull
 
 TYPE='INVALID'
 if [[ $TRAVIS_EVENT_TYPE == 'cron' && $TRAVIS_BRANCH == "$LIVE_BRANCH" ]]; then
@@ -32,16 +22,18 @@ if [[ ($TYPE == 'CRON') || ( $TYPE == 'USER' ) ]]; then
   pip3 install pypandoc pyyaml requests ads
   python3 generator/update.py
 
-  cd latex
-  ../latexdockercmd.sh xelatex -interaction nonstopmode cv-shauncread.tex
+  if git status --porcelain | grep latex/ | grep -v "*.pdf"; then
+	  cd latex
+	  ../latexdockercmd.sh xelatex -interaction nonstopmode cv-shauncread.tex
+	  cd ..
+  fi
+
 
   # Push to GitHub
-  cd ..
-
   if [[ $TYPE == 'CRON' ]]; then
-    git flow hotfix start travis
+    git checkout -b update/cron
   elif [[ $TYPE == 'USER' ]]; then
-    git flow release start travis
+    git checkout -b update/user
   fi
 
   git add _publications/ latex/ files/
@@ -49,9 +41,11 @@ if [[ ($TYPE == 'CRON') || ( $TYPE == 'USER' ) ]]; then
 
 
   if [[ $TYPE == 'CRON' ]]; then
-    git flow hotfix finish travis
+    git checkout "$UPDATE_BRANCH"
+    git merge update/cron  # this script is activated again to push to $LIVE_BRANCH
   elif [[ $TYPE == 'USER' ]]; then
-    git flow release finish travis
+    git checkout "$LIVE_BRANCH"
+    git merge update/user
   fi
 
 
