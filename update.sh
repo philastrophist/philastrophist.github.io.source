@@ -8,6 +8,7 @@ LIVE_BRANCH="master"
 
 git checkout $TRAVIS_BRANCH
 git pull
+git branch
 
 TYPE='INVALID'
 if [[ $TRAVIS_EVENT_TYPE == 'cron' && $TRAVIS_BRANCH == "$LIVE_BRANCH" ]]; then
@@ -59,6 +60,10 @@ if [[ ($TYPE == 'CRON') || ( $TYPE == 'USER' ) ]]; then
     git merge update/user
   fi
 
+  if ! [[ "$(git rev-parse "$TRAVIS_COMMIT")" == "$(git rev-parse HEAD)" ]]; then
+    echo this is now not the most recent commit in the branch, not pushing
+    exit 0 
+  fi
   git push https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $UPDATE_BRANCH
   git push https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $LIVE_BRANCH
 fi
