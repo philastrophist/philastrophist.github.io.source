@@ -37,7 +37,7 @@ if [[ ($TYPE == 'CRON') || ( $TYPE == 'USER' ) ]]; then
   fi
 
   git add _publications/ latex/ files/
-  git -c user.name='travis' -c user.email='travis' commit -m "updating live version"
+  git -c user.name='travis' -c user.email='travis' commit -m "updating live version" || ( echo "no update necessary" && exit 0 )
 
 
   if [[ $TYPE == 'CRON' ]]; then
