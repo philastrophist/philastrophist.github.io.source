@@ -52,10 +52,10 @@ if [[ ($TYPE == 'CRON') || ( $TYPE == 'USER' ) ]]; then
 
 
   if [[ $TYPE == 'CRON' ]]; then
-    git checkout -t "origin/$UPDATE_BRANCH"
+    git checkout --track -b "origin/$UPDATE_BRANCH"
     git merge update/cron  # this script is activated again to push to $LIVE_BRANCH
   elif [[ $TYPE == 'USER' ]]; then
-    git checkout -t "origin/$LIVE_BRANCH"
+    git checkout --track -b "origin/$LIVE_BRANCH"
     git merge update/user
   fi
 
