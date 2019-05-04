@@ -4,6 +4,11 @@ I think I've got things running smoothly and fixed some major bugs, but feel fre
 
 ### Note: if you are using this repo and now get a notification about a security vulnerability, delete the Gemfile.lock file. 
 
+# Use
+* DO NOT COMMIT to the MASTER branch directly: that is the live branch
+* Work by branching from DEVELOP and then merging back into DEVELOP
+* This can be accomplished by using git flow without using `release`.
+
 # Instructions
 
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)

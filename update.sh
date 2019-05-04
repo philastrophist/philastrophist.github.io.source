@@ -16,13 +16,21 @@ elif [[ $TRAVIS_BRANCH == "$UPDATE_BRANCH" ]]; then
   TYPE='USER'
 fi
 
+if ! [[ "$(git rev-parse "$TRAVIS_COMMIT")" == "$(git rev-parse HEAD)" ]]; then
+  echo this is not the most recent commit in the branch, no work necessary
+  exit 0 
+fi
+
 if [[ ($TYPE == 'CRON') || ( $TYPE == 'USER' ) ]]; then
+  # if on a tracked branch
   wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb
   sudo dpkg -i pandoc-2.7.2-1-amd64.deb
+  rm pandoc-2.7.2-1-amd64.deb
   pip3 install pypandoc pyyaml requests ads
   python3 generator/update.py
 
-  if git status --porcelain | grep latex/ | grep -v "*.pdf"; then
+  if git status --porcelain | grep latex/ | grep -v "*.pdf"; then 
+    # do latex stuff
 	  cd latex
 	  ../latexdockercmd.sh xelatex -interaction nonstopmode cv-shauncread.tex
 	  cd ..
@@ -51,8 +59,7 @@ if [[ ($TYPE == 'CRON') || ( $TYPE == 'USER' ) ]]; then
     git merge update/user
   fi
 
-
-  git push --dry-run https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $UPDATE_BRANCH
-  git push --dry-run https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $LIVE_BRANCH
+  git push https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $UPDATE_BRANCH
+  git push https://"$GITHUB_USER":"$GITHUB_API_KEY"@github.com/"$TRAVIS_REPO_SLUG" $LIVE_BRANCH
 fi
   
