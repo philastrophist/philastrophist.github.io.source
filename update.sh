@@ -7,6 +7,7 @@ UPDATE_BRANCH="develop"
 LIVE_BRANCH="master"
 
 git checkout $TRAVIS_BRANCH
+git fetch --all
 git pull
 git branch
 
