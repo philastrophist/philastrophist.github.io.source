@@ -15,7 +15,7 @@ deploy:
   repo: philastrophist/philastrophist.github.io
   on:
     branch: master
-    target_branch: master
+  target_branch: master
 script:
   - sudo apt-get install git-flow
   - git config core.fileMode false
