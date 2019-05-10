@@ -10,7 +10,7 @@ env:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  github_token: $GITHUB_API_KEY  # Set in the settings page of your repository, as a secure variable
   keep_history: false
   repo: philastrophist/philastrophist.github.io
   on:
