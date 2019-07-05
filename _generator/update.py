@@ -134,25 +134,49 @@ if __name__ == '__main__':
     for entry in info['unpublished']:
         entry['authors'] = clean_authors(entry)
 
-    print('parsing cv...')
-    new_latex_cv = parse(latex_cv_template, info, 'latex')
-    new_markdown_cv = parse(markdown_cv_template, info, 'md')
+    import copy
+    info['published'].append(copy.deepcopy(info['unpublished'][2]))
+    # info['published'][-1]['authors'] = 'Wang, L.; Rowan-Robinson, M.; Gao, F.; Bonato, M.; Chyży, K.T.; Farrah, D.; Gurkan, G.; Hardcastle, M.J.; Calistro-Rivera, G.; McCheyne, I.; Prandoni, I.; **Read, S.C.**; Röttgering, H.J.A.; Sabater, J.; Shimwell, T. W.; Smith, D.J.B.; Williams, W.L.'
+    info['published'][-1]['title'] = "A LOFAR-IRAS Cross-match Study: The Far-infrared Radio Correlation and the 150 MHz Luminosity as a Star-formation Rate Tracer"
+    info['published'][-1]['year'] = 2019
 
-    print('updating cv...')
-    with open('_latex/cv-shauncread.tex', 'w') as f:
-        f.write(new_latex_cv)
+    import jellyfish
+    from datetime import datetime
+    for pub in info['published']:
+        for unpub in info['unpublished']:
+            if int(pub['year']) >= datetime.now().year:
+                pub_string = '; '.join(sorted(pub['authors'].split('; '), key=lambda x: x[0]))
+                unpub_string = '; '.join(sorted(unpub['authors'].split('; '), key=lambda x: x[0]))
+                score = jellyfish.jaro_distance(pub_string.lower(), unpub_string.lower())
+                score *= jellyfish.jaro_distance(pub['title'].lower(), unpub['title'].lower())
+            else:
+                score = 0
+            if score > 0.8:
+                print(unpub)
+                print('has been detected as published as:')
+                print(pub)
+                print('removing from unpublished ')
+                del 
 
-    with open('_pages/cv.md', 'w') as f:
-        f.write(new_markdown_cv)
+    # print('parsing cv...')
+    # new_latex_cv = parse(latex_cv_template, info, 'latex')
+    # new_markdown_cv = parse(markdown_cv_template, info, 'md')
 
-    print('updating publication list... ')
-    for paper in published:
-        fname = '_publications/{}.md'.format(paper['filename'])
-        if (not os.path.exists(fname)) or args.overwrite:
-            print('writing new paper:  {}'.format(paper['title']))
-            page = parse(markdown_paper_page_template, paper, 'md')
-            with open(fname, 'w') as f:
-                f.write(page)
-        else:
-            print('not overwriting existing paper: {}'.format(paper['title']))
+    # print('updating cv...')
+    # with open('_latex/cv-shauncread.tex', 'w') as f:
+    #     f.write(new_latex_cv)
+
+    # with open('_pages/cv.md', 'w') as f:
+    #     f.write(new_markdown_cv)
+
+    # print('updating publication list... ')
+    # for paper in published:
+    #     fname = '_publications/{}.md'.format(paper['filename'])
+    #     if (not os.path.exists(fname)) or args.overwrite:
+    #         print('writing new paper:  {}'.format(paper['title']))
+    #         page = parse(markdown_paper_page_template, paper, 'md')
+    #         with open(fname, 'w') as f:
+    #             f.write(page)
+    #     else:
+    #         print('not overwriting existing paper: {}'.format(paper['title']))
 
