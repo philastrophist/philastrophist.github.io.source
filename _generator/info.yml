@@ -41,9 +41,9 @@ unpublished:
 
 published:
   ADS:
-    - name: "Read, S.C."
-      aff: "*Hertfordshire*"
-      year: 2015-2019
+    - name: "Read, S"
+      aff: "Hertfordshire"
+      year: [2015, 2019]
   others:
     - arxiv: 2016arXiv161003159M
 

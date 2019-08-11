@@ -120,14 +120,15 @@ if __name__ == '__main__':
     fields = ['title', 'pubdate', 'pub', 'abstract', 'identifier', 'bibcode', 'doi', 'author', 'year']
     published = []
     for entry in info['published']['ADS']:
-        for paper in ads.SearchQuery(author='Read, S.C.', sort="year", aff="*Hertfordshire*", 
+        for paper in ads.SearchQuery(author=entr['author'], sort="year", aff=entry['aff'], year=entry['year'] 
                                      database='astronomy', fl=fields):
-            d = {f: getattr(paper, f) for f in fields}
-            d['authors'] = clean_authors(paper)
-            d['title'], d['filename'] = clean_title(paper)
-            d['date'] = clean_date(paper)
-            d['arxiv'] = arxiv_id(paper)
-            published.append(d)
+            if entry['year'][0] <= int(paper.year) <= entry['year'][1]:
+                d = {f: getattr(paper, f) for f in fields}
+                d['authors'] = clean_authors(paper)
+                d['title'], d['filename'] = clean_title(paper)
+                d['date'] = clean_date(paper)
+                d['arxiv'] = arxiv_id(paper)
+                published.append(d)
     print(len(published), 'published papers found on ADS')
     info['published'] = published
     
