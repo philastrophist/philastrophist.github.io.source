@@ -120,7 +120,7 @@ if __name__ == '__main__':
     fields = ['title', 'pubdate', 'pub', 'abstract', 'identifier', 'bibcode', 'doi', 'author', 'year']
     published = []
     for entry in info['published']['ADS']:
-        for paper in ads.SearchQuery(author=entr['author'], sort="year", aff=entry['aff'], year=entry['year'] 
+        for paper in ads.SearchQuery(author=entr['author'], sort="year", aff=entry['aff'], year=entry['year'], 
                                      database='astronomy', fl=fields):
             if entry['year'][0] <= int(paper.year) <= entry['year'][1]:
                 d = {f: getattr(paper, f) for f in fields}
