@@ -82,6 +82,16 @@ education:
 affiliations: [['Fellow of the Royal Astronomical Society', 'FRAS']]
 
 experience:
+  - name: Postdoc
+    start: Oct 2019
+    end: Present
+    info: Galaxy shape measures in Euclid
+    location: "Osservatorio di Roma - INAF"
+    bullets: [
+        '* Quanitfying the colour-gradient bias in Euclid weak-lensing measurements',
+        '* Generation of realistic galaxy catalogues',
+        '* Hubble image reduction',
+   ]
   - name: Ph.D.
     start: Oct 2015
     end: Oct 2019
