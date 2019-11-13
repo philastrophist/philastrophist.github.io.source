@@ -54,7 +54,7 @@ published:
 info:
   name: Shaun C Read
   github: philastrophist
-  phone: "+44 7909975186"
+  phone: ""
   site: "shaun.science/"
   occupation: Postdoc
   mail: shaun.c.read@gmail.com
@@ -86,7 +86,7 @@ experience:
     start: Oct 2019
     end: Present
     info: Galaxy shape measures in Euclid
-    location: "Osservatorio di Roma - INAF"
+    location: "Osservatorio Astronomico di Roma - INAF"
     output: ""
     bullets: [
         '* Quanitfying the colour-gradient bias in Euclid weak-lensing measurements',
