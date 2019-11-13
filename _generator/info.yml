@@ -56,7 +56,7 @@ info:
   github: philastrophist
   phone: "+44 7909975186"
   site: "shaun.science/"
-  occupation: Ph.D. Graduand
+  occupation: Postdoc
   mail: shaun.c.read@gmail.com
 
 skills_bubble: ["Astronomy", "Bayesian statistics", "Big data", "Observational", "Numerical techniques"]
@@ -87,6 +87,7 @@ experience:
     end: Present
     info: Galaxy shape measures in Euclid
     location: "Osservatorio di Roma - INAF"
+    output: ""
     bullets: [
         '* Quanitfying the colour-gradient bias in Euclid weak-lensing measurements',
         '* Generation of realistic galaxy catalogues',
@@ -143,17 +144,19 @@ experience:
       "* Communication with the backend team ",
       "* API design, visualisation, and automation development."
     ]
-  - name: "Summer Student"
-    start: Jun 2013
-    end: Aug 2013
-    output: ""
-    location: National Physical Laboratory, UK
-    info: "Supervisor: Dr Alastair Sinclair"
-    bullets: [
-        "* Worked with the Time & Frequency Team.",
-        "* Analysed Gaussian beam quality for the strontium ion optical clock group.",
-        "* Developed analytical Matlab code and the optical bench setup required."
-    ]
+
+other_experience:
+    - name: "Summer Student"
+      start: Jun 2013
+      end: Aug 2013
+      output: ""
+      location: National Physical Laboratory, UK
+      info: "Supervisor: Dr Alastair Sinclair"
+      bullets: [
+          "* Worked with the Time & Frequency Team.",
+          "* Analysed Gaussian beam quality for the strontium ion optical clock group.",
+          "* Developed analytical Matlab code and the optical bench setup required."
+      ]
 
 presentations:
   - date: April 2018
