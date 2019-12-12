@@ -1,0 +1,195 @@
+summary: |
+  I am a postdoctoral researcher specialising in Bayesian statistical analysis on big data, working on the weak-lensing colour-gradient bias with Euclid .
+  My main interests are reverberation mapping and the interface between star-forming galaxies and AGN. 
+  I have worked with a diverse range of data including the latest releases from the LOFAR, SDSS, and H-ATLAS surveys and the Horizon-AGN simulations. 
+  My latest work combines the use of novel statistical Bayesian analysis with these large datasets in order to facilitate effective exploitation of the 
+  next generation of surveys.
+
+unpublished: 
+  - title: The Performance of Photometric Reverberation Mapping at High Redshift and the Reliability of Damped Random Walk Models
+    pub: 'accepted by MNRAS'
+    authors: ['Read, S.C.', 'Smith, D.J.B.', 'Jarvis, M.J.', 'Gürkan, G.']
+    year: 2019
+    abstract: |
+      Accurate methods for reverberation mapping using photometry are highly sought after since they are inherently less resource intensive than spectroscopic techniques. 
+      However, the effectiveness of photometric reverberation mapping for estimating black hole masses is sparsely investigated at redshifts higher than z≈0.04. 
+      Furthermore, photometric methods frequently assume a Damped Random Walk (DRW) model, which may not be universally applicable. 
+      We perform photometric reverberation mapping using the Javelin photometric DRW model for the QSO SDSSJ144645.44+625304.0 at z=0.351 and estimate the Hβ lag of 65<sup>+6</sup><sub>-1</sub> days and black-hole mass of 10<sup>8.22<sup>+0.13</sup><sub>-0.15</sub></sup>M<sub>⊙</sub>. 
+      An analysis of the reliability of photometric reverberation mapping, conducted using many thousands of simulated CARMA process light-curves, shows that we can recover the input lag to within 6 per cent on average given our target's observed signal-to-noise of > 20 and an average cadence of 14 days (even when DRW is not applicable). 
+      Furthermore, we use our suite of simulated light curves to deconvolve aliases and artefacts from our QSO's posterior probability distribution, increasing the signal-to-noise on the lag by a factor of ∼2.2. 
+      We exceed the signal-to-noise of the Sloan Digital Sky Survey Reverberation Mapping Project (SDSS-RM) campaign with a quarter of the observing time per object, resulting in a ∼200 per cent increase in SNR efficiency over SDSS-RM. 
+
+  - title: On the Causes of the Mass Dependency of the Star-formation Rate -- Radio Luminosity Relation with LOFAR, Horizon-AGN, and CANDID
+    pub: in prep.
+    authors: ['Read, S.C.', 'Smith, D.J.B.', 'Gürkan, G.', 'Hardcastle, M.J.', 'et al.']
+    year: 2019
+
+  - title: A Markov Chain Monte Carlo approach for measurement of jet precession in radio-loud active galactic nuclei
+    pub: 'submitted to MNRAS'
+    authors: ['Horton, M.', 'Hardcastle, M.J.', 'Read, S.C.', 'Krause, M.']
+    year: 2019
+
+  - title: Bias and Accretion Rate Dependency in the Reverberation-Mapped Lag-luminosity Relation
+    pub: in prep.
+    authors: ['Read, S.C.', 'Smith, D.J.B.', 'et al.']
+    year: 2019
+
+  - title: Low Mass Stars and Multiple Systems in Gaia
+    pub: in prep.
+    authors: ['González-Egea, E.', 'Pinfield, D.', 'Read, S.C.', 'et al.']
+    year: 2019
+
+
+published:
+  ADS:
+    - name: "Read, S"
+      aff: "Hertfordshire"
+      year: [2015, 2019]
+    - name: "Read, S"
+      aff: "inaf"
+      year: [2019, 2022]
+  others:
+    - arxiv: 2016arXiv161003159M
+
+
+info:
+  name: Shaun C Read
+  github: philastrophist
+  phone: ""
+  site: "shaun.science/"
+  occupation: Postdoc
+  mail: shaun.c.read@gmail.com
+
+skills_bubble: ["Astronomy", "Bayesian statistics", "Big data", "Observational", "Numerical techniques"]
+
+
+programming: 
+  advanced: ['Python']
+  intermediate: ['Shell', 'SQL', 'Matlab', ['LaTeX', '\large \LaTeX']]
+  basic: ['C', 'C++', 'R', 'Ruby', 'IDL', 'HTML']
+
+education:
+  - qualification: Ph.D., Astronomy
+    location: University of Hertfordshire, UK
+    start: 2015
+    end: 2019
+    notes: "Passed viva w/ minor corrections"
+  - qualification: MPhys, Physics
+    location: Durham University, UK
+    start: 2010
+    end: 2014
+    notes: 2:1 with Honours
+
+affiliations: [['Fellow of the Royal Astronomical Society', 'FRAS']]
+
+experience:
+  - name: Postdoc
+    start: Oct 2019
+    end: Present
+    info: Galaxy shape measures in Euclid
+    location: "Osservatorio Astronomico di Roma - INAF"
+    output: ""
+    bullets: [
+        '* Quanitfying the colour-gradient bias in Euclid weak-lensing measurements',
+        '* Generation of realistic galaxy catalogues',
+        '* Hubble image reduction',
+   ]
+  - name: Ph.D.
+    start: Oct 2015
+    end: Oct 2019
+    info: "Supervisor: Dr Daniel J.B. Smith"
+    output: "Thesis: Measuring the Physical Properties of Distant Galaxies and Black Holes in the Era of Surveys"
+    location: University of Hertfordshire
+    bullets: [
+      '* Studying the relation between the star-formation rate and radio luminosity of galaxies.', 
+      '* Using new photometric time-series techniques to estimate quasar black-hole masses with reverberation mapping.',
+      '* Innovating new Bayesian methods to infer complete distributions from incomplete, noisy data in order to mitigate observational bias and explore large datasets.'
+  ]
+  - name: Observing
+    start: Jun 2016
+    end: ""
+    location: William Herschel Telescope, La Palma
+    info: ""
+    output: ""
+    bullets: ""
+  - name: Programming teaching assistant & tutor
+    start: Jan 2016
+    end: Present
+    info: ""
+    output: ""
+    location: University of Hertfordshire, UK
+    bullets: [
+        "* Taught students Python and Matlab for scientific programming courses.",
+        "* Ran code review sessions for post-graduates and Ph.D. students.",
+        "* Lead programming lectures and demonstrations."
+    ]
+  - name: "'Physics of stars' demonstrator"
+    start: Nov 2016
+    end: Mar 2017
+    info: ""
+    output: ""
+    location: University of Hertfordshire, UK
+    bullets: [
+        "* Assisted students at the Bayfordbury teaching observatory.",
+        "* Instructed in the use of 16-inch telescopes and the reduction of data.",
+        "* Projects included PNe imaging and constructing open cluster HR-diagrams."
+    ]
+  - name: "Insight Analyst"
+    start: Jul 2014
+    end: Jul 2015
+    output: ""
+    location: Linkdex, UK
+    info: "Processing big data from raw consumer search patterns to an explanative format suitable for client business strategies."
+    bullets: [
+      "* Big data processing with Python & sci-kit learn",
+      "* Communication with the backend team ",
+      "* API design, visualisation, and automation development."
+    ]
+
+other_experience:
+    - name: "Summer Student"
+      start: Jun 2013
+      end: Aug 2013
+      output: ""
+      location: National Physical Laboratory, UK
+      info: "Supervisor: Dr Alastair Sinclair"
+      bullets: [
+          "* Worked with the Time & Frequency Team.",
+          "* Analysed Gaussian beam quality for the strontium ion optical clock group.",
+          "* Developed analytical Matlab code and the optical bench setup required."
+      ]
+
+presentations:
+  - date: April 2018
+    meeting: European Week of Astronomy and Space Science
+    organiser: European Astronomical Society, *EAS*
+    location: University of Liverpool, UK
+    what: poster
+
+  - date: July 2017
+    meeting: National Astronomy Meeting
+    organiser: Royal Astronomical Society, *RAS*
+    location: University of Hull, UK
+    what: contributed talk
+
+  - date: June 2016
+    meeting: National Astronomy Meeting
+    organiser: Royal Astronomical Society, *RAS*
+    location: University of Nottingham, UK
+    what: contributed talk, poster
+
+  - date: May 2016
+    meeting: The Cosmic FIR Landscape with H-ATLAS
+    organiser: H-ATLAS consortium
+    location: University of Lisbon, Portugal
+    what: contributed talk
+
+interests:
+  - name: Star-formation
+    desc: "LOFAR, FIR, empirical relations, FIRC, MagPhys, SFG-AGN interface."
+
+  - name: Reverberation mapping
+    desc: High redshift, photometric techniques, $$t_{lag}-L_{5100}$$, selection biases.
+
+  - name: Big data & Bayesian analysis
+    desc: Large surveys, advanced Bayesian statistical inference, bias mitigation.
