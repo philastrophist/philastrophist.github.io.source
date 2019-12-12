@@ -169,13 +169,15 @@ if __name__ == '__main__':
                 unpub['arxiv'] = ''
             if 'doi' not in unpub:
                 unpub['doi'] = ['']
-            date = '{}-01-00'.format(unpub['year'])
-            unpub['filename'] = unpub['date'] + '-' + ''.join([i if i in ascii_letters else '-' for i in unpub['title'].split(':')[0]])
+            if 'date' not in unpub:
+                date = '{}-01-00'.format(unpub['year'])
+            else:
+                date = unpub['date']
+            unpub['filename'] = date + '-' + ''.join([i if i in ascii_letters else '-' for i in unpub['title'].split(':')[0]])
             unpub['date'] = date.replace('00', '01')
             info['published'] = [unpub] + info['published']
             del info['unpublished'][n_unpub]
 
-    print(info['published'])
     print('parsing cv...')
     new_latex_cv = parse(latex_cv_template, info, 'latex')
     new_markdown_cv = parse(markdown_cv_template, info, 'md')
