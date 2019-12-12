@@ -158,6 +158,7 @@ if __name__ == '__main__':
                 print(pub)
                 print('removing from unpublished. You should update info.yml accordingly \n================')
                 del info['unpublished'][n_unpub]
+                
     for unpub in info['unpublished']:
         if 'accept' in unpub['pub']:
             print('{} has been accepted'.format(unpub['title']))
@@ -169,7 +170,7 @@ if __name__ == '__main__':
             if 'doi' not in unpub:
                 unpub['doi'] = '-'
             unpub['date'] = '{}-01-00'.format(unpub['year'])
-            unpub['filename'] = paper['date'] + '-' + ''.join([i if i in ascii_letters else '-' for i in unpub['title'].split(':')[0]])
+            unpub['filename'] = unpub['date'] + '-' + ''.join([i if i in ascii_letters else '-' for i in unpub['title'].split(':')[0]])
             info['published'].append(unpub)
 
     print('parsing cv...')
