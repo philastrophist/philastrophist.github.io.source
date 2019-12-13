@@ -240,6 +240,7 @@ if __name__ == '__main__':
         paper['url'] = 'http://{}/publication/{}'.format(info['info']['site'].strip('/'), paper['filename'])
         paper['filename'] = '_publications/{}.md'.format(paper['filename'])
 
+    info['published'].sort(key=lambda x: x['date'], reverse=True)
     print('parsing cv...')
     new_latex_cv = parse(latex_cv_template, info, 'latex')
     new_markdown_cv = parse(markdown_cv_template, info, 'md')
