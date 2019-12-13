@@ -238,7 +238,7 @@ if __name__ == '__main__':
 
     for paper in info['published']:
         paper['url'] = 'http://{}/publication/{}'.format(info['info']['site'].strip('/'), paper['filename'])
-        paper['filename'] = '_publications/{}.md'.format(paper['filename'])
+        paper['filename'] = '{}.md'.format(paper['filename'])
 
     info['published'].sort(key=lambda x: x['date'], reverse=True)
     print('parsing cv...')
@@ -254,10 +254,11 @@ if __name__ == '__main__':
 
     print('updating publication list... ')
     for paper in info['published']:
-        if (not os.path.exists(paper['filename'])) or args.overwrite:
+        path = os.path.join('_publications', paper['filename'])
+        if (not os.path.exists(path)) or args.overwrite:
             print('writing new paper:  {}'.format(paper['title']))
             page = parse(markdown_paper_page_template, paper, 'md')
-            with open(paper['filename'], 'w') as f:
+            with open(path, 'w') as f:
                 f.write(page)
         else:
             print('not overwriting existing paper: {}'.format(paper['title']))
