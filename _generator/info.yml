@@ -146,17 +146,18 @@ other_experience:
           "* Analysed Gaussian beam quality for the strontium ion optical clock group.",
           "* Developed analytical Matlab code and the optical bench setup required."
       ]
-  - name: "Insight Analyst"
-    start: Jul 2014
-    end: Jul 2015
-    output: ""
-    location: Linkdex, UK
-    info: "Processing big data from raw consumer search patterns to an explanative format suitable for client business strategies."
-    bullets: [
-      "* Big data processing with Python & sci-kit learn",
-      "* Communication with the backend team ",
-      "* API design, visualisation, and automation development."
-    ]
+      
+    - name: "Insight Analyst"
+      start: Jul 2014
+      end: Jul 2015
+      output: ""
+      location: Linkdex, UK
+      info: "Processing big data from raw consumer search patterns to an explanative format suitable for client business strategies."
+      bullets: [
+        "* Big data processing with Python & sci-kit learn",
+        "* Communication with the backend team ",
+        "* API design, visualisation, and automation development."
+      ]
 
 presentations:
   - date: April 2018
